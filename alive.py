@@ -32,8 +32,9 @@ def wait():
   
   
 def runScript():
-    process = subprocess.run(["npm", "start"], capture_output=True, text=True).stdout.strip("\n")
-    print(process)
+    process = subprocess.run(["npm", "start"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+    print(process.stdout)
+    print(process.returncode)
 
 keep_alive()
 runScript()
