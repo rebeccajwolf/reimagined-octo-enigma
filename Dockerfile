@@ -27,9 +27,9 @@ RUN cp /usr/share/zoneinfo/$TZ /etc/localtime
 
 RUN pip install -U pip
 
-RUN --mount=type=secret,id=accounts.json,dst=/etc/secrets/accounts.json cp /etc/secrets/accounts.json ./src
+RUN --mount=type=secret,id=accounts_json,dst=/etc/secrets/accounts.json cp /etc/secrets/accounts.json ./src
 
-RUN --mount=type=secret,id=config.json,dst=/etc/secrets/config.json cp /etc/secrets/config.json ./src
+RUN --mount=type=secret,id=config_json,dst=/etc/secrets/config.json cp /etc/secrets/config.json ./src
 
 # Add often-changed files in order to cache above
 COPY . .
