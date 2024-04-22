@@ -62,7 +62,7 @@ export default class BrowserFunc {
                 if (currentURL.hostname !== dashboardURL.hostname) {
                     await this.bot.browser.utils.tryDismissAllMessages(page)
 
-                    await this.bot.utils.wait(2000)
+                    await this.bot.utils.wait(120000)
                     await page.goto(this.bot.config.baseURL)
                 } else {
                     this.bot.log('GO-HOME', 'Visited homepage successfully')
