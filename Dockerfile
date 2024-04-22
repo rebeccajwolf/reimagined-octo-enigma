@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y jq
 # Install dependencies including Playwright
 RUN apt-get install -y \
     xvfb \
+    gunicorn \
     libgbm-dev \
     libnss3 \
     libasound2 \

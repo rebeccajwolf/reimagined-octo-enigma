@@ -1,12 +1,4 @@
 #!/bin/bash
-
-
-export DISPLAY=:99
-export DBUS_SESSION_BUS_ADDRESS=/dev/null
-
-# start vxfb
-Xvfb :99 -screen 0 1280x800x8 -nolisten tcp &
-
-# start the script
-
-exec python3 alive.py
+sh ./clean_mem.sh;
+exec gunicorn keep_alive:app --bind 0.0.0.0:8080 &
+xvfb-run --server-args="-screen 0 800x600x24" python3 main.py
