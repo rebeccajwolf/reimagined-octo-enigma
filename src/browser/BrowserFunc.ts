@@ -34,7 +34,7 @@ export default class BrowserFunc {
             const maxIterations = 5 // Maximum iterations set to 5
 
             for (let iteration = 1; iteration <= maxIterations; iteration++) {
-                await this.bot.utils.wait(3000)
+                await this.bot.utils.wait(120000)
                 await this.bot.browser.utils.tryDismissCookieBanner(page)
 
                 // Check if account is suspended
